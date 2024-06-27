@@ -1,7 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose');
 const User = require('./models/user.model.js');
-const UserRoute = require("./routes/user.route.js");
+const UserRoute = require("./routes/routes.js");
+//const LeagueRoute = require("./routes/league.route.js");
 
 const app = express()
 
@@ -17,7 +18,8 @@ app.get('/', (req, res) => {
 });
 
 // routes
-app.use("/api/user", UserRoute);
+app.use("/api", UserRoute);
+//app.use("/api/league", LeagueRoute);
 
 mongoose
   .connect(

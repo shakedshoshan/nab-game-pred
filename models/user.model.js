@@ -9,9 +9,8 @@ const UserSchema = mongoose.Schema(
     },
 
     leagues: [{
-      type: Number,
-      required: true,
-      default: 0,
+      type: String,
+      required: false,
     }],
   },
   {
