@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express')
 const mongoose = require('mongoose');
 const User = require('./models/user.model.js');
@@ -21,10 +22,9 @@ app.get('/', (req, res) => {
 app.use("/api", UserRoute);
 //app.use("/api/league", LeagueRoute);
 
+
 mongoose
-  .connect(
-    "mongodb+srv://shakedshoshan:771U2HuEZSRsGNyt@backenddb.pln6t9i.mongodb.net/?retryWrites=true&w=majority&appName=backendDB"
-  )
+  .connect(dbURI)
   .then(() => {
     console.log("Connected to database!");
     app.listen(4000, () => {
